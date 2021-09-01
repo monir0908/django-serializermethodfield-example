@@ -5,7 +5,7 @@ class Supplier(models.Model):
     supplier_name = models.CharField(max_length=250)
     supplier_code = models.CharField(max_length=25)
     supplier_address = models.TextField()
-    score = models.IntegerField(default=1)
+    credit = models.IntegerField(default=5)
 
     class Meta:
         verbose_name = 'supplier',
@@ -13,7 +13,7 @@ class Supplier(models.Model):
 
     @property
     def ranking(self):
-        if self.score >=20:
+        if self.credit >=20:
             return 'Top class'
         else:
             return 'Average'
