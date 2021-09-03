@@ -3,7 +3,18 @@ from .models import Supplier
 
 class SupplierSerializer(serializers.ModelSerializer):
 
-    ranking = serializers.ReadOnlyField()
+    # serializers.SerializerMethodField()
+
+
     class Meta:
         model = Supplier
-        fields = '__all__'
+        fields = ['id', 'supplier_name','supplier_code', 'credit_score']
+
+   
+
+    
+
+
+  
+
+    
